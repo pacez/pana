@@ -1,7 +1,7 @@
 {
-  "name": "pana",
+  "name": "pana-tools",
   "version": "1.0.0",
-  "description": "''",
+  "description": "Front-end Tools",
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "nodejs",
+    "front-end",
+    "pana",
     "tools"
   ],
   "author": "Pace Zhong",
