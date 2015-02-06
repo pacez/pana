@@ -1,8 +1,8 @@
 {
   "name": "pana-tools",
-  "version": "1.0.0",
+  "version": "0.0.1-dev",
   "description": "Front-end Tools",
-  "main": "build.js",
+  "main": "pana.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,6 @@
     "tools"
   ],
   "author": "Pace Zhong",
-  "license": "MIT"
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }
