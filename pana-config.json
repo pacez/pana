@@ -1,0 +1,9 @@
+{
+  "sync": {
+    //同步命令配置
+    "location": "d:/blog",
+    "server": "https://pacez.github.io/trunk",
+    "user": "admin",
+    "pwd": "pwd"
+  }
+}

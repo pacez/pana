@@ -1,14 +1,14 @@
 {
   "name": "pana-tools",
-  "version": "0.0.1-dev",
+  "version": "0.1.4-dev",
+  "preferGlobal": "true",
   "description": "Front-end Tools",
-  "main": "pana.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "'github.com/pacez/pana'"
+    "url": "github.com/pacez/pana"
   },
   "keywords": [
     "nodejs",
@@ -18,5 +18,10 @@
   ],
   "author": "Pace Zhong",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "commander": "^2.6.0"
+  },
+  "bin": { "pana": "bin/pana" },
+  "engines": { "node": "*" }
 }
