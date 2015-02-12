@@ -37,3 +37,5 @@ program.parse(process.argv);
 console.log("===========================Options====================");
 console.log(' clear - %s ', program.clear);
 console.log(' config - %s ', program.config);
+console.log(' config - %s ', program.config);
+console.log(' config - %s ', program.config);
