@@ -1,6 +1,6 @@
 {
   "name": "pana-tools",
-  "version": "0.1.4-dev",
+  "version": "0.1.5-dev",
   "preferGlobal": "true",
   "description": "Front-end Tools",
   "scripts": {
