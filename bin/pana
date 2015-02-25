@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var ver='1.1.5-dev',
+var ver='0.1.6-dev',
     program = require('commander'),
     watch = require('./pana-watch.js'),
     fs=require('fs');
@@ -28,7 +28,7 @@ program
   .option('-c, --config [path]', '指定pana配置文件路径', '\pana-config.json');
 
 program
-  .command('sync')
+  .command('ftp-sync')
   .description('同步服务器目录')
   .action(function() {
     outToolInfo()
