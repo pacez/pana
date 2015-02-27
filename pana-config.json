@@ -1,9 +1,8 @@
 {
-  "sync": {
-    //同步命令配置
-    "location": "d:/blog",
-    "server": "https://pacez.github.io/trunk",
+  "ftpSync": {
+    "host": "http://www.test.com",
     "user": "admin",
-    "pwd": "pwd"
+    "pwd": "pwd",
+    "port": "22"
   }
 }
