@@ -10,6 +10,6 @@ pana ftp-sync 用于同步本地目录至开发服务器，主要应用场景是
 减少不必要的频繁SVN提交，提高开发效率。
 目前在支付宝开发环境中，存在大量这样的应用场景。
 ###ftp-sync 期望达成的结果：
-![Build目录结构](https://raw.githubusercontent.com/pacez/pana/master/doc/ftp-synce.png)
+![ftp-sync](https://raw.githubusercontent.com/pacez/pana/master/doc/ftp-sync.png)
 
 目前该工具善不能实际应用于开发环境，提前占坑"pana-tools",
