@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var ver='0.1.6-dev',
+var ver='0.1.8-dev',
     program = require('commander'),
     watch = require('./pana-watch.js'),
     fs=require('fs');

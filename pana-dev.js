@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var ver='0.1.6-dev',
+var ver='0.1.7-dev',
     program = require('commander'),
     watch = require('./bin/pana-watch.js'),
     fs=require('fs');
@@ -20,7 +20,6 @@ function outToolInfo(){
   console.log("======================================================");
 }
 
-
 program
   .version(ver)
   .usage('test case')
@@ -33,10 +32,12 @@ program
   .action(function() {
     outToolInfo()
     watch('**/*');
+    console.log("Watching... CTRl+C Stop");
   });
 
 program.parse(process.argv);
 if (!process.argv.slice(2).length) {
-    program.outputHelp();
+    //program.outputHelp();
 }
+
 
