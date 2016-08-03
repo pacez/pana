@@ -1,6 +1,6 @@
 {
   "name": "pana-tools",
-  "version": "0.1.8-dev",
+  "version": "0.0.1-beta",
   "preferGlobal": "true",
   "description": "Front-end Tools",
   "scripts": {
@@ -22,6 +22,7 @@
   "dependencies": {
     "colorful": "^2.1.0",
     "commander": "^2.6.0",
+    "ftp": "^0.3.10",
     "gaze": "^0.5.1",
     "lodash": "^3.1.0"
   },

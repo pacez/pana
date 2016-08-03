@@ -1,4 +1,6 @@
 var color = require('colorful'),
+    client=require('ftp'),
+    ftp=new client(),
     fs = require('fs');
 
 var dateFormat=function(date){
@@ -19,11 +21,32 @@ module.exports = function(path) {
       var ftpConfig = JSON.parse(data).ftpSync,
           currentRoot = process.cwd(),//获取相对路径
           relativePath = path.replace(currentRoot, '').replace(/\\/g, '/'),
-          uploadPath = ftpConfig.host + relativePath;
+          uploadPath = ftpConfig.host+':'+ftpConfig.port+ relativePath;
 
-      console.log('upload ' +path+ ' to ' +uploadPath);
-      console.log(color.green(dateFormat(new Date()))+" " + color.green('uploaded successfully!'));
-      console.log("Watching... CTRl+C Stop");
+      var filesToString='upload ' +path+ ' to ' +uploadPath;
+
+      ftp.on('ready', function() {
+        console.log(color.blue('FTP uploading...'));
+        ftp.put(path, relativePath, function(err) {
+          if (err) throw err;
+          ftp.end();
+          console.log(color.green(filesToString+" "+dateFormat(new Date())+" " +'uploaded successfully!'));
+          console.log("Watching... CTRl+C Stop");
+        });
+      });
+
+      //ftp连接异常捕获
+      ftp.on('error',function(err){
+        console.log(color.red(err));
+      });
+
+      ftp.connect({
+        host: ftpConfig.host,
+        port: ftpConfig.port,
+        user: '',
+        password: ''
+      });
+
     } else {
       console.log(color.red("Cann't found pana-config.json, Please Ctrl+C Stop!"));
     }

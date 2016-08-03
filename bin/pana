@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-var ver='0.1.8-dev',
-    program = require('commander'),
+var program = require('commander'),
     watch = require('./pana-watch.js'),
     fs=require('fs');
+    pack=JSON.parse(fs.readFileSync('./package.json','utf8'));
 
 function clear(boole) {
   return boole;
@@ -16,26 +16,26 @@ function outToolInfo(){
   console.log("======================================================");
   console.log("TOOL NAME: pana");
   console.log("AUTHOR: pace zhong");
-  console.log("VERSION: %s",ver);
+  console.log("VERSION: %s",pack.version);
   console.log("======================================================");
 }
 
-
-program
-  .version(ver)
-  .usage('test case')
-  .option('-C, --clear [Boolean]', '清理dump文件', 'false')
-  .option('-c, --config [path]', '指定pana配置文件路径', '\pana-config.json');
+// program
+//   .version(pack.version)
+//   .usage('test case')
+//   .option('-C, --clear [Boolean]', '清理dump文件', 'false')
+//   .option('-c, --config [path]', '指定pana配置文件路径', '\pana-config.json');
 
 program
   .command('ftp-sync')
-  .description('同步服务器目录')
+  .description('监控文件变化并同步FTP目录')
   .action(function() {
     outToolInfo()
     watch('**/*');
+    console.log("Watching... CTRl+C Stop");
   });
 
 program.parse(process.argv);
 if (!process.argv.slice(2).length) {
-    //program.outputHelp();
+    program.outputHelp();
 }
